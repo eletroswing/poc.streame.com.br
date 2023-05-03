@@ -1,5 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 
+interface Global {
+  [key: string]: any;
+}
+
+const global: Global = globalThis;
+
 let prisma: PrismaClient;
 
 if (process.env.NODE_ENV === 'production') {
